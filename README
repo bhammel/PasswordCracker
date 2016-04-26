@@ -1,0 +1,33 @@
+Brandon Hammel <bhammel@umail.ucsb.edu>
+6497663
+
+To crack the first password, I did a brute-force dictionary attack
+(dictionary_attack.py) using the 'wordsEn.txt' dictionary. The password was
+recovered in 4 minutes 45 seconds on a CSIL machine.
+
+For the second password, a simple brute-force dictionary attack using the
+'wordsEn.txt' dictionary turned up no results. I then decided to apply some
+rules to each word in the dictionary. I applied a leet-speak rule to each
+word, replacing 'a' with '4', 'e' with '3', 'l' with '1', 'o' with '0', and
+'t' with '7'. Using these rules, another dictionary attack (dictionary_attack.py
+with -l option) using 'wordsEn.txt' successfully recovered the password in
+22 seconds on a CSIL machine.
+
+The third password was much more difficult. Both types of dictionary attacks
+described above turned up no results. I then resorted to a brute-force search
+attack (brute_force.py), trying all alphanumeric combinations of length 6 and
+higher. This attack succeeded much quicker than expected, with a runtime of
+15 minutes 4 seconds on a CSIL machine.
+
+For the fourth and final password, I needed to be a bit more creative and
+think outside the box. I made several failed attempts before finding a
+method that allowed the password to be recovered. I started with the
+dictionary attacks described above, to no avail. I also applied other rules
+to the dictionary, such as adding all combinations of four-digit numbers to
+the end of each word--still nothing. I then read about a technique called
+'mangling', in which the account's username is manipulated in different ways,
+such as by adding a variable number of digits to the end of the username,
+capitalizing different letters of the username, reversing the username,
+repeating the username 2 or more times, adding 's' to the end of the username,
+etc. Applying this technique (mangling_attack.py) allowed me to recover this
+password in less than 1 second on a CSIL machine.
